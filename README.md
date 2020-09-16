@@ -24,7 +24,7 @@ The intention is that common bangs will be managed by the community in community
 
 ## How do I get started?
 
-There doesn't yet exist any sort of ecosystem around _bangin_, however I hope this changes. In the meantime, you can pass input from something like `dmenu` or `rofi` into _bangin_ and pipe the output to `xdg-open`. And, because it's a dead simple shell script, any other niche use case you have can almost certainly be accomodated with just a little bit of scripting.
+There doesn't yet exist any sort of ecosystem around _bangin_, however I hope this changes. In the meantime, you can pass input from something like `dmenu` or `rofi` into _bangin_ and pipe the output to `xdg-open`. And, because it's a dead simple shell script, any other niche use case you have can almost certainly be accomodated with just a little bit of scripting. You can find an example usage in my [dotfiles](https://github.com/samhh/dotfiles/blob/desktop-linux/home/scripts/web-search.sh).
 
 I maintain a few small lists that you might be interested in:
 
