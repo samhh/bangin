@@ -20,17 +20,18 @@ Finally, you cannot override or remove bangs per your personal preference, and y
 
 _bangin_ solves these problems with a simple solution which is maximally extensible, free in every sense of the word, and will work anywhere that can interpret POSIX shell scripts. Given some banglists, which are merely text files of newline-separated bangs, the shell script parses your input and outputs a URL which can then be forwarded onto a web browser or other utility.
 
-The intention is that common bangs will be managed by the community in community lists, and that you as an individual user can also optionally maintain your own personal list. Think of it a little bit like adblocking with community-run lists of blocked domains. It's worth noting at this point that, if anyone is interested, it should be possible to generate a familiar banglist as a starting point by [scraping DuckDuckGo](https://github.com/zmwangx/ddg-bangs) (if you do that, I'd love to add a link to it here!).
+The intention is that common bangs will be managed by the community in community lists, and that you as an individual user can also optionally maintain your own personal list. Think of it a little bit like adblocking with community-run lists of blocked domains.
 
 ## How do I get started?
 
 There doesn't yet exist any sort of ecosystem around _bangin_, however I hope this changes. In the meantime, you can pass input from something like `dmenu` or `rofi` into _bangin_ and pipe the output to `xdg-open`. And, because it's a dead simple shell script, any other niche use case you have can almost certainly be accomodated with just a little bit of scripting. You can find an example usage in my [dotfiles](https://github.com/samhh/dotfiles/blob/desktop-linux/home/scripts/web-search.sh).
 
-I maintain a few small lists that you might be interested in:
+I maintain a few lists that you might be interested in:
 
-- [prelude.bangs](https://www.github.com/samhh/prelude.bangs)
-- [english.bangs](https://www.github.com/samhh/english.bangs)
-- [uk.bangs](https://www.github.com/samhh/uk.bangs)
+- [duckduckgo.bangs](https://github.com/samhh/duckduckgo.bangs)
+- [prelude.bangs](https://github.com/samhh/prelude.bangs)
+- [english.bangs](https://github.com/samhh/english.bangs)
+- [uk.bangs](https://github.com/samhh/uk.bangs)
 
 ## Technical details
 
