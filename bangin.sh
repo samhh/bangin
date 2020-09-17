@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# bangin - a primitive, portable shell script which enables DuckDuckGo-like bangs.
+# Version: 0.1.0
+
 input=${1}
 
 search=${input%!*}
