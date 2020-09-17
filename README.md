@@ -24,7 +24,7 @@ The intention is that common bangs will be managed by the community in community
 
 ## How do I get started?
 
-There doesn't yet exist any sort of ecosystem around _bangin_, however I hope this changes. In the meantime, you can pass input from something like `dmenu` or `rofi` into _bangin_ and pipe the output to `xdg-open`. And, because it's a dead simple shell script, any other niche use case you have can almost certainly be accomodated with just a little bit of scripting. You can find an example usage in my [dotfiles](https://github.com/samhh/dotfiles/blob/desktop-linux/home/scripts/web-search.sh).
+There doesn't yet exist any sort of ecosystem around _bangin_, however I hope this changes. In the meantime, you can pass input from something like `dmenu` or `rofi` into _bangin_ and pipe the output to `xdg-open` or a specific browser. And, because it's a dead simple shell script, any other niche use case you have can almost certainly be accomodated with just a little bit of scripting. You can find an example usage in my [dotfiles](https://github.com/samhh/dotfiles/blob/desktop-linux/home/scripts/web-search.sh).
 
 I maintain a few lists that you might be interested in:
 
@@ -33,6 +33,15 @@ I maintain a few lists that you might be interested in:
 - [dev.bangs](https://github.com/samhh/dev.bangs)
 - [english.bangs](https://github.com/samhh/english.bangs)
 - [uk.bangs](https://github.com/samhh/uk.bangs)
+
+At present, the easiest way to install a banglist is to clone the repo and run:
+
+```shell
+mkdir -p ~/.local/share/bangin/lists/
+ln -s /path/to/repo/example.bangs ~/.local/share/bangin/lists/
+```
+
+As for the shell script itself, you can either copy it onto your system manually, possibly placing it somewhere like `/usr/local/bin` so that it's in your path, or if you're on Arch you can install it from the [AUR](https://aur.archlinux.org/packages/bangin/).
 
 ## Technical details
 
@@ -52,5 +61,5 @@ It'd be helpful for less technically inclined users if someone wrote a GUI for m
 
 It'd also be helpful if someone could write some software that puts a thin web server around _bangin_ so that it could be deployed and used on any machine, almost like a DuckDuckGo substitute. At this point you'd have the extra request again, but you'd still benefit from _bangin_'s customisation, and you'd run the code on your own server that you knew you could trust.
 
-An AUR package is planned. Packages for other distributions and operating systems would be welcomed.
+I maintain an AUR package, but packages for other distributions and operating systems would be welcomed.
 
