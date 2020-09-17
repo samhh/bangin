@@ -30,6 +30,7 @@ I maintain a few lists that you might be interested in:
 
 - [duckduckgo.bangs](https://github.com/samhh/duckduckgo.bangs)
 - [prelude.bangs](https://github.com/samhh/prelude.bangs)
+- [dev.bangs](https://github.com/samhh/dev.bangs)
 - [english.bangs](https://github.com/samhh/english.bangs)
 - [uk.bangs](https://github.com/samhh/uk.bangs)
 
