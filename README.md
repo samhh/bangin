@@ -49,17 +49,9 @@ The shell script is written with POSIX compliance in mind, so it _should_ run al
 
 Banglists are plaintext files in which bangs are separated by newlines. On each line is a !bang and a URL with a `{{{s}}}` token, delimited by a space. All `*.bangs` files in `$XDG_DATA_HOME/bangin/lists/` are loaded in reverse alphabetical order, with priority being given to the first matching bang. If it exists, `$XDG_CONFIG_HOME/bangin/bangin.bangs` will be given priority and loaded first, allowing you to override bangs in community-sourced lists.
 
-Bang aliases in banglists (`!a,!b url`) are not currently supported but are planned. Additionally, the prospect of enabling multiple bang output (`search !a !b`) is something to consider.
-
 Bang syntax is currently very strict; the bang must be placed at the end of the line, and you must have both a search term and a bang, each non-empty. An input of `a!b!c` is interpreted as a search term of `a!b` and a bang of `!c`. Failure to adhere to this schema will result in a failure exit code.
 
-## Miscellaneous
+## License
 
 Unlike most of my projects, which utilise a copyleft license, _bangin_ is MIT licensed to encourage its widespread adoption and pseudo-standardisation. We all benefit if the idea of bangs becomes decentralised and normalised.
-
-It'd be helpful for less technically inclined users if someone wrote a GUI for managing and customising banglists.
-
-It'd also be helpful if someone could write some software that puts a thin web server around _bangin_ so that it could be deployed and used on any machine, almost like a DuckDuckGo substitute. At this point you'd have the extra request again, but you'd still benefit from _bangin_'s customisation, and you'd run the code on your own server that you knew you could trust.
-
-I maintain an AUR package, but packages for other distributions and operating systems would be welcomed.
 
