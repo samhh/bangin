@@ -41,7 +41,22 @@ done
 # No matching bang was found
 if [ -z "$template" ]; then exit 1; fi
 
-replaced=$(echo "$template" | sed "s/{{{s}}}/$search/")
+# From: https://unix.stackexchange.com/a/60698
+urlencode () {
+  string=$1
+  while [ -n "$string" ]; do
+    tail=${string#?}
+    head=${string%$tail}
+    case $head in
+      [-._~0-9A-Za-z]) printf %c "$head";;
+      *) printf %%%02x "'$head"
+    esac
+    string=$tail
+  done
+  echo
+}
+
+replaced=$(echo "$template" | sed "s/{{{s}}}/$(urlencode "$search")/")
 
 echo "$replaced"
 
