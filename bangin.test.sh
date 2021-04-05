@@ -61,5 +61,18 @@ testDataBangsPrecedence() {
   assertEquals "preypost2" "$(./bangin.sh y!x)"
 }
 
+testReadsAliases() {
+  echo "!a,!aa a{{{s}}}" >> "$cfg_file"
+  echo "!bb,!b b{{{s}}}" >> "$cfg_file"
+  echo "!badbang !c{{{s}}}" >> "$cfg_file"
+  echo "!badbang {{{s}}}!d" >> "$cfg_file"
+  assertEquals "ax" "$(./bangin.sh x!a)"
+  assertEquals "ax" "$(./bangin.sh x!aa)"
+  assertEquals "bx" "$(./bangin.sh x!b)"
+  assertEquals "bx" "$(./bangin.sh x!bb)"
+  assertNull "$(./bangin.sh x!c)"
+  assertNull "$(./bangin.sh x!d)"
+}
+
 . shunit2
 

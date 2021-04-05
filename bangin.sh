@@ -21,7 +21,7 @@ if [ "$bang_text" = "$input" ]; then exit 1; fi
 readonly bang="!$bang_text"
 
 find_bang_in_file() {
-    sed -n "/^$bang /s/^$bang //p" "$1" 2> /dev/null
+    sed -n "/\(^\([^ ]\+,\)\?$bang\(,[^ ]\+\)\? \)/s///p" "$1" 2> /dev/null
 }
 
 # Check user's config first
