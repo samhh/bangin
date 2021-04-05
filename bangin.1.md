@@ -1,4 +1,4 @@
-# bangin - pure, private bangs
+# bangin - a primitive, portable shell script which enables DuckDuckGo-like bangs.
 
 ## SYNOPSIS
 
