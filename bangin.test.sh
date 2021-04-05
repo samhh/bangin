@@ -28,23 +28,34 @@ tearDown() {
   rm -rf "$data_dir"
 }
 
-testCfgBang() {
+testUrlEncodes() {
+  echo "!x pre{{{s}}}post" > "$cfg_file"
+  assertEquals "pre%5epost" "$(./bangin.sh ^!x)"
+}
+
+testTakesLastBang() {
+  echo "!x a{{{s}}}" >> "$cfg_file"
+  echo "!y b{{{s}}}" >> "$cfg_file"
+  assertEquals "bz%21x" "$(./bangin.sh z!x!y)"
+}
+
+testReadsCfgBangs() {
   echo "!x pre{{{s}}}post" > "$cfg_file"
   assertEquals "preypost" "$(./bangin.sh y!x)"
 }
 
-testDataBang() {
+testReadsDataBangs() {
   echo "!x pre{{{s}}}post" > "$data_dir/anything.bangs"
   assertEquals "preypost" "$(./bangin.sh y!x)"
 }
 
-testCfgOverDataPrecedence() {
+testCfgOverDataBangsPrecedence() {
   echo "!x pre{{{s}}}post1" > "$cfg_file"
   echo "!x pre{{{s}}}post2" > "$data_dir/anything.bangs"
   assertEquals "preypost1" "$(./bangin.sh y!x)"
 }
 
-testDataDirPrecedence() {
+testDataBangsPrecedence() {
   echo "!x pre{{{s}}}post1" > "$data_dir/a.bangs"
   echo "!x pre{{{s}}}post2" > "$data_dir/b.bangs"
   assertEquals "preypost2" "$(./bangin.sh y!x)"
