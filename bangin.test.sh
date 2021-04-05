@@ -30,24 +30,24 @@ tearDown() {
 
 testCfgBang() {
   echo "!x pre{{{s}}}post" > "$cfg_file"
-  assertEquals "$(./bangin.sh y!x)" "preypost"
+  assertEquals "preypost" "$(./bangin.sh y!x)"
 }
 
 testDataBang() {
   echo "!x pre{{{s}}}post" > "$data_dir/anything.bangs"
-  assertEquals "$(./bangin.sh y!x)" "preypost"
+  assertEquals "preypost" "$(./bangin.sh y!x)"
 }
 
 testCfgOverDataPrecedence() {
   echo "!x pre{{{s}}}post1" > "$cfg_file"
   echo "!x pre{{{s}}}post2" > "$data_dir/anything.bangs"
-  assertEquals "$(./bangin.sh y!x)" "preypost1"
+  assertEquals "preypost1" "$(./bangin.sh y!x)"
 }
 
 testDataDirPrecedence() {
   echo "!x pre{{{s}}}post1" > "$data_dir/a.bangs"
   echo "!x pre{{{s}}}post2" > "$data_dir/b.bangs"
-  assertEquals "$(./bangin.sh y!x)" "preypost2"
+  assertEquals "preypost2" "$(./bangin.sh y!x)"
 }
 
 . shunit2
