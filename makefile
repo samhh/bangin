@@ -7,3 +7,7 @@ buildman:
 .PHONY: test
 test:
 	./bangin.test.sh
+
+.PHONY: lint
+lint:
+	shellcheck ./bangin.sh ./bangin.test.sh
