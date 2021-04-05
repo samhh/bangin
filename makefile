@@ -2,7 +2,7 @@ SHELL := /usr/bin/env sh
 
 .PHONY: man
 man:
-	ronn --manual "bangin manual" --organization "bangin 0.1.1" --roff bangin.1.md
+	ronn --manual "bangin manual" --organization "bangin 0.1.2" --roff bangin.1.md
 
 .PHONY: test
 test:
