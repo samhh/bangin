@@ -1,0 +1,67 @@
+.\" generated with Ronn/v0.7.3
+.\" http://github.com/rtomayko/ronn/tree/0.7.3
+.
+.TH "BANGIN" "1" "April 2021" "bangin 0.1.1" "bangin manual"
+.
+.SH "NAME"
+\fBbangin\fR \- pure, private bangs
+.
+.SH "SYNOPSIS"
+\fBbangin\fR \fIinput\fR
+.
+.SH "DESCRIPTION"
+\fBbangin\fR takes an input string, attempts to parse it for a search term and a known !bang, and if successful outputs a URL\.
+.
+.SH "BANGLIST"
+Instead of storing bangs in a centralised database, bangin checks local \fIbanglists\fR for bang definitions\.
+.
+.P
+Banglists are plaintext files in which each entry is newline separated\. Each line should first contain a bang, followed by a space, followed by a string including the replacement location\. The syntax is as follows:
+.
+.P
+\fB!bang text{{{s}}}text\fR
+.
+.P
+Banglists are discoverable by bangin in the following ordered locations:
+.
+.IP "1." 4
+\fB$XDG_CONFIG_HOME/bangin/bangin\.bangs\fR
+.
+.IP "2." 4
+\fB$XDG_DATA_HOME/bangin/lists/*\.bangs\fR (reverse alphabetical order)
+.
+.IP "" 0
+.
+.SH "EXAMPLES"
+Given the following banglist:
+.
+.IP "" 4
+.
+.nf
+
+!ab first{{{s}}}bang
+!cd second{{{s}}}bang
+.
+.fi
+.
+.IP "" 0
+.
+.P
+And the following input: \fBbangin test!cd\fR
+.
+.P
+You will see the following output: \fBsecondtestbang\fR
+.
+.SH "EXIT STATUS"
+bangin exits with status 0 if a bang could successfully be produced\. If this fails for any reason then bangin exits with status 1\. This could represent but is not limited to the following:
+.
+.IP "\(bu" 4
+Invalid input syntax\.
+.
+.IP "\(bu" 4
+Failure to find a matching bang\.
+.
+.IP "" 0
+.
+.SH "AUTHOR"
+Sam A\. Horvath\-Hunt (hello@samhh\.com)
