@@ -25,7 +25,7 @@ find_bang_in_file() {
 }
 
 # Check user's config first
-template=$(find_bang_in_file "${XDG_CONFIG_HOME:-$HOME/.config/bangin}/bangin.bangs")
+template=$(find_bang_in_file "${XDG_CONFIG_HOME:-$HOME/.config}/bangin/bangin.bangs")
 
 # We need to check the files in reverse alphabetical order. The things we do
 # for portability...
