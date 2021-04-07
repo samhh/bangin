@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0 (2021-04-07)
+
+- Adds support for bang aliases.
+
 ## 0.1.2 (2021-04-05)
 
 - Adds a manpage.
