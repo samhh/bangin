@@ -24,9 +24,11 @@ The intention is that common bangs will be managed by the community in community
 
 ## How do I get started?
 
-There doesn't yet exist any sort of ecosystem around _bangin_, however I hope this changes. In the meantime, you can pass input from something like `dmenu` or `rofi` into _bangin_ and pipe the output to `xdg-open` or a specific browser. And, because it's a dead simple shell script, any other niche use case you have can almost certainly be accomodated with just a little bit of scripting. You can find an example usage in my [dotfiles](https://github.com/samhh/dotfiles/blob/desktop-linux/home/scripts/web-search.sh).
+There doesn't yet exist much of an ecosystem around _bangin_, however I hope this changes. In the meantime, you can pass input from something like `dmenu` or `rofi` into _bangin_ and pipe the output to `xdg-open` or a specific browser. And, because it's a dead simple shell script, any other niche use case you have can almost certainly be accomodated with just a little bit of scripting.
 
-I maintain a few lists that you might be interested in:
+With the use of [bangin-server-node](https://github.com/samhh/bangin-server-node) it is possible to use _bangin_ as the search engine in your web browser. You can see an example integration in my [dotfiles](https://github.com/samhh/dotfiles/commit/2990b3bf00e988770e108d2466aeb04b4c78a73c).
+
+As for banglists, I maintain a few lists that you might be interested in:
 
 - [duckduckgo.bangs](https://github.com/samhh/duckduckgo.bangs)
 - [prelude.bangs](https://github.com/samhh/prelude.bangs)
@@ -41,7 +43,9 @@ mkdir -p ~/.local/share/bangin/lists/
 ln -s /path/to/repo/example.bangs ~/.local/share/bangin/lists/
 ```
 
-As for the shell script itself, you can either copy it onto your system manually, possibly placing it somewhere like `/usr/local/bin` so that it's in your path, or if you're on Arch you can install it from the [AUR](https://aur.archlinux.org/packages/bangin/).
+Nota bene that _bangin_ actually checks in `$XDG_DATA_HOME` and falls back to `~/.local/share/` as the default per the XDG specification, so adjust accordingly.
+
+As for the shell script itself, you can either copy it onto your system manually, possibly placing it somewhere like `/usr/local/bin` so that it's in your path, or if you're on Arch you can install it from the [AUR](https://aur.archlinux.org/packages/bangin/). The server is also available from the [AUR](https://aur.archlinux.org/packages/bangin-server-node/).
 
 ## Technical details
 
